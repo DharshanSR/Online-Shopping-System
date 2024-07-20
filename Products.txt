@@ -1,0 +1,48 @@
+Clothing Product
+Product ID: C123
+Product Name: trouser
+Available Items: 20
+Price: 1500.0
+Size: M
+Color: blue
+
+Clothing Product
+Product ID: C234
+Product Name: shirt
+Available Items: 25
+Price: 9000.0
+Size: XL
+Color: red
+
+Clothing Product
+Product ID: C789
+Product Name: shoe
+Available Items: 20
+Price: 20000.0
+Size: M
+Color: black
+
+Electronic Product
+Product ID: E123
+Product Name: Samsung
+Available Items: 250
+Price: 25000.0
+Brand: samsung
+Warranty Period: 40 months
+
+Electronic Product
+Product ID: E234
+Product Name: phone
+Available Items: 50
+Price: 30000.0
+Brand: oppo
+Warranty Period: 24 months
+
+Electronic Product
+Product ID: E456
+Product Name: laptop
+Available Items: 80
+Price: 100000.0
+Brand: asus
+Warranty Period: 60 months
+
