@@ -3,6 +3,20 @@
  * This class defines common attributes and behaviors
  * that all specific product types may inherit and override.
  */
+
+/*
+ * - The class `Product` is an abstract class representing a general product
+ * with attributes like `productId`, `productName`, `availableItems`, and
+ * `price`.
+ * - The constructor initializes these attributes when a `Product` object is
+ * created.
+ * - `getProductId()` returns the product ID.
+ * - `getProductName()` returns the product name.
+ * - `getavailableItems()` returns the available items.
+ * - `getPrice()` returns the price.
+ * - `toString()` method provides a string representation of the `Product`
+ * object with all its attributes.
+ */
 public abstract class Product {
     // Instance variables
     private String productId;

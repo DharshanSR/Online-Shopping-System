@@ -1,6 +1,12 @@
 import javax.swing.*; // Import Swing components for building graphical user interfaces (GUIs)
 import java.util.Scanner; // Import Scanner for reading input from standard input (keyboard)
 
+/*
+ - `main(String[] args)`: Entry point of the program, initializes input scanner, manager, and user objects, loads data from files, and presents a menu for user interaction.
+- `loadFromFile()`: Loads data from file into the manager and user objects.
+- `console()`: Displays a console menu for the manager to interact with the shopping system.
+- `saveToFile()`: Saves user data to a file.
+ */
 public class Main {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
@@ -8,12 +14,12 @@ public class Main {
         User user = new User();
 
         // Loading data from files
-        manager.loadFromFile();     //loading the manager data from the file
-        user.loadFromFile();    // loading the user data from file
+        manager.loadFromFile(); // loading the manager data from the file
+        user.loadFromFile(); // loading the user data from file
 
         while (true) {
             try {
-                //main menu
+                // main menu
                 System.out.println("\nWelcome To Shopping Center");
                 System.out.println("-----------------------------------");
                 System.out.println("Select Your Role");
@@ -25,7 +31,7 @@ public class Main {
 
                 int role = input.nextInt(); // read user role choice
 
-                if (role == 1) {    //user menu
+                if (role == 1) { // user menu
                     System.out.println("\n1. New User");
                     System.out.println("2. Existing User");
                     System.out.print("Enter your Option : ");
@@ -71,7 +77,7 @@ public class Main {
                     }
 
                 } else if (role == 2) {
-                    manager.console();      //westminster manager menu
+                    manager.console(); // westminster manager menu
                 } else if (role == 3) {
                     System.out.println("Exiting the program...");
                     break; // Exit the loop and terminate the program
@@ -80,7 +86,7 @@ public class Main {
                 }
             } catch (java.util.InputMismatchException e) {
                 System.out.println("\nInvalid Input.");
-                input.next();   //clear invalid input
+                input.next(); // clear invalid input
             } catch (Exception e) {
                 System.out.println("\nInvalid Input.");
             }

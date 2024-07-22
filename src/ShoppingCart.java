@@ -1,5 +1,10 @@
 import java.util.ArrayList;
 
+/* - The `ShoppingCart` class represents a shopping cart that stores products and calculates the total cost.
+- `add(Product product)`: Adds a product to the shopping cart.
+- `remove(Product product)`: Removes a product from the shopping cart.
+- `calculate()`: Calculates the total cost of all products in the shopping cart.
+- `getCart()`: Retrieves the list of products currently in the shopping cart. */
 public class ShoppingCart {
     private ArrayList<Product> cart = new ArrayList<>(); // ArrayList to store products in the cart
     private double totalCost; // Total cost of all products in the cart

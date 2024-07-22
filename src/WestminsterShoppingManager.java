@@ -1,9 +1,17 @@
-import java.io.File;       // Import File class for file and directory manipulation
+import java.io.File; // Import File class for file and directory manipulation
 import java.io.FileWriter; // Import FileWriter class for writing to files
 import java.io.IOException; // Import IOException class for handling input/output errors
 import java.util.ArrayList; // Import ArrayList class for managing collections of objects efficiently
-import java.util.Scanner;   // Import Scanner class for reading input from standard input and files
+import java.util.Scanner; // Import Scanner class for reading input from standard input and files
 
+/* This `WestminsterShoppingManager` class manages a shopping system with product operations. 
+- `console()`: Handles a console-based menu for adding, removing, displaying, and saving products. 
+- `addProduct(Product product)`: Adds a product to the system if there are less than 50 products already. 
+- `removeProduct(String productId)`: Removes a product by ID, displaying the type of product removed. 
+- `displayProducts()`: Displays all products sorted by ID, indicating if they are electronics or clothing. 
+- `saveToFile()`: Saves products to a file with their details. 
+- `loadFromFile()`: Loads products from a file, parsing the details for electronics and clothing products. 
+- `getProductList()`: Returns the list of products. */
 public class WestminsterShoppingManager implements ShoppingManager {
     private static ArrayList<Product> ProductList;
 
@@ -11,10 +19,10 @@ public class WestminsterShoppingManager implements ShoppingManager {
         this.ProductList = new ArrayList<>();
     }
 
-    public void console(){
+    public void console() {
         WestminsterShoppingManager manager = new WestminsterShoppingManager();
         manager.loadFromFile();
-        while(true) {
+        while (true) {
             try {
                 // Console menu
                 System.out.println("\n*******************************************");
@@ -51,16 +59,15 @@ public class WestminsterShoppingManager implements ShoppingManager {
                             if (product.getProductId().equals(productId)) {
                                 System.out.println("ID Already Exists.\n");
                                 exitloop = true;
-                                break ;
+                                break;
                             }
                         }
-                        if (exitloop){
+                        if (exitloop) {
                             break;
                         }
                         if (productId.length() == 4) {
                             System.out.println("Product Name: ");
                             String productName = input.next();
-
 
                             System.out.print("Number Of Items: ");
                             int availableItems = 0;
@@ -71,12 +78,12 @@ public class WestminsterShoppingManager implements ShoppingManager {
                                     availableItems = input.nextInt();
                                     validInput = true; // Break the loop as we have valid input
                                 } else {
-                                    System.out.println("Invalid input for number of items. Please enter a valid integer.");
+                                    System.out.println(
+                                            "Invalid input for number of items. Please enter a valid integer.");
                                     input.next(); // Consume the invalid input
                                     System.out.print("Number Of Items: "); // Prompt again
                                 }
                             }
-
 
                             System.out.print("Product Price: ");
                             double price = 0;
@@ -113,13 +120,15 @@ public class WestminsterShoppingManager implements ShoppingManager {
                                     break;
                                 }
 
-                                product = new Electronics(productId, productName, availableItems, price, brand, warrantyPeriod);
+                                product = new Electronics(productId, productName, availableItems, price, brand,
+                                        warrantyPeriod);
                             } else if (type == 2) {
                                 System.out.print("Size (S, M, XL, XXL): ");
                                 String size = input.next().toUpperCase();
 
                                 // Validate size
-                                if (!size.equals("S") && !size.equals("M") && !size.equals("XL") && !size.equals("XXL")) {
+                                if (!size.equals("S") && !size.equals("M") && !size.equals("XL")
+                                        && !size.equals("XXL")) {
                                     System.out.println("Invalid size. Size must be S, M, XL, or XXL.");
                                     break;
                                 }
@@ -133,7 +142,8 @@ public class WestminsterShoppingManager implements ShoppingManager {
                             }
                             manager.addProduct(product);
                         } else {
-                            System.out.println("\nInvalid number of characters for product ID (must be 4 characters).\n");
+                            System.out
+                                    .println("\nInvalid number of characters for product ID (must be 4 characters).\n");
                         }
 
                         break;
@@ -163,7 +173,7 @@ public class WestminsterShoppingManager implements ShoppingManager {
     @Override
     public void addProduct(Product product) {
         // Checks the number pf products in the arraylist
-        if (ProductList.size()<=50) {
+        if (ProductList.size() <= 50) {
             ProductList.add(product);
             ProductList.sort((p1, p2) -> p1.getProductId().compareTo(p2.getProductId()));
             System.out.println("Product added successfully.");
@@ -191,20 +201,20 @@ public class WestminsterShoppingManager implements ShoppingManager {
             } else {
                 System.out.println("Removed product with ID " + productId);
             }
-        }else {
+        } else {
             System.out.println("Product not found.");
         }
-        ProductList.sort((p1,p2) -> p1.getProductId().compareTo(p2.getProductId()));
+        ProductList.sort((p1, p2) -> p1.getProductId().compareTo(p2.getProductId()));
     }
 
     @Override
     public void displayProducts() {
-        ProductList.sort((p1,p2) -> p1.getProductId().compareTo(p2.getProductId()));
-        if(ProductList.isEmpty()){
+        ProductList.sort((p1, p2) -> p1.getProductId().compareTo(p2.getProductId()));
+        if (ProductList.isEmpty()) {
             System.out.println("\nProducts not Available\n");
-        }else {
+        } else {
             for (Product product : ProductList) {
-                if(product instanceof Electronics){
+                if (product instanceof Electronics) {
                     System.out.print("Electronics ");
                 } else if (product instanceof Clothing) {
                     System.out.print("Clothing ");
@@ -298,7 +308,8 @@ public class WestminsterShoppingManager implements ShoppingManager {
                             cond++;
                             break;
                         case 5:
-                            warrantyPeriod = Integer.parseInt(line.replace("Warranty Period: ", "").replace(" months", ""));
+                            warrantyPeriod = Integer
+                                    .parseInt(line.replace("Warranty Period: ", "").replace(" months", ""));
                             cond++;
                             break;
                     }
@@ -348,8 +359,9 @@ public class WestminsterShoppingManager implements ShoppingManager {
         }
         return ProductList;
     }
+
     @Override
-    public ArrayList<Product> getProductList(){
+    public ArrayList<Product> getProductList() {
         return ProductList;
     }
 }

@@ -1,10 +1,14 @@
 import javax.swing.table.AbstractTableModel; // Import AbstractTableModel for creating custom table models in Swing
 import java.util.ArrayList; // Import ArrayList to manage collections of objects efficiently
 
-
+/*- The `CartTable` class extends `AbstractTableModel` to create a custom table model.
+- `getRowCount()`: Returns the number of rows in the table, which is the size of the cart product list.
+- `getColumnCount()`: Returns the number of columns in the table based on the length of the column headers array.
+- `getValueAt(int rowIndex, int columnIndex)`: Retrieves the value at a specific cell in the table based on the row and column index.
+- `getColumnName(int columnIndex)`: Overrides the column names with the given names in `cartColumns` array. */
 public class CartTable extends AbstractTableModel {
     // Column headers for the table
-    final String[] cartColumns = {"Products", "Quantity", "Price ($)"};
+    final String[] cartColumns = { "Products", "Quantity", "Price ($)" };
     private ArrayList<Product> cartProductList;
 
     // Number of the specific product
@@ -23,7 +27,8 @@ public class CartTable extends AbstractTableModel {
 
     @Override
     public int getColumnCount() {
-        // Returns the number of columns, which is the length of the column headers array
+        // Returns the number of columns, which is the length of the column headers
+        // array
         return cartColumns.length;
     }
 

@@ -2,6 +2,11 @@ import javax.swing.*;
 import javax.swing.border.EmptyBorder; // Import EmptyBorder for creating empty borders around Swing components
 import java.awt.*;
 
+/* This `ShoppingCartGUI` class represents a GUI for displaying a shopping cart with total and discount calculations for a user.
+
+- `ShoppingCartGUI(User loggedInUser)`: Constructor to initialize the GUI with user's shopping cart data.
+- `calculateTotalAndApplyDiscounts()`: Method to calculate the total, apply discounts, and update the display fields.
+- `countItemsAndCheckCategoryDiscounts()`: Method to count items, check for category discounts, and update the display fields. */
 public class ShoppingCartGUI extends JFrame {
     private JPanel textFieldPanel;
     private JTable table2;

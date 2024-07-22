@@ -4,7 +4,21 @@ import java.io.IOException; // Import IOException class for handling input/outpu
 import java.util.ArrayList; // Import ArrayList class for managing collections of objects efficiently
 import java.util.Scanner; // Import Scanner class for reading input from standard input (keyboard) and files
 
+/* - **Class Definition**: 
+  - Represents a user with username, password, purchase number, and shopping cart information.
+  - Includes methods for managing user data, such as registration, authentication, saving to file, and loading from a file.
 
+- **Method Explanation**:
+  1. `getShoppingCart()`: Returns the user's shopping cart.
+  2. `getPurchaseNumber()`: Returns the user's purchase number.
+  3. `setPurchaseNumber(int purchaseNumber)`: Sets the user's purchase number.
+  4. `getUserName()`: Returns the user's username.
+  5. `getPassword()`: Returns the user's password.
+  6. `isUsernameTaken(String username)`: Checks if a username is already taken.
+  7. `saveToFile()`: Saves user details to a file.
+  8. `loadFromFile()`: Loads user details from a file.
+  9. `registerUser(String username, String password)`: Registers a new user.
+  10. `authenticateUser(String username, String password)`: Authenticates user credentials. */
 public class User {
     // Instance variables
     private String userName;
@@ -14,19 +28,19 @@ public class User {
 
     // Static variables
     private static ArrayList<User> userList = new ArrayList<>();
-    private ArrayList<ShoppingCart> shoppingCartList = new ArrayList<>();  // Not currently used
+    private ArrayList<ShoppingCart> shoppingCartList = new ArrayList<>(); // Not currently used
 
     // Default constructor
     public User() {
         ShoppingCart shoppingCart1 = new ShoppingCart();
-        shoppingCartList.add(shoppingCart1);  // Initialize shopping cart for each user
+        shoppingCartList.add(shoppingCart1); // Initialize shopping cart for each user
     }
 
     // Constructor with parameters
     public User(String userName, String password) {
         this.userName = userName;
         this.password = password;
-        this.shoppingCart = new ShoppingCart();  // Initialize shopping cart for the user
+        this.shoppingCart = new ShoppingCart(); // Initialize shopping cart for the user
     }
 
     // Getter method for shopping cart
@@ -79,7 +93,6 @@ public class User {
             return false; // Failed to save to file
         }
     }
-
 
     // Load user details from a file
     public static ArrayList<User> loadFromFile() {
