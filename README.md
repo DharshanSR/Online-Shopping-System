@@ -14,9 +14,8 @@ This Java project implements a shopping management system with a focus on inheri
    - [WestminsterShoppingManager](#westminstershoppingmanager)
 3. [Console Menu Implementation (Phase 2)](#console-menu-implementation-phase-2)
 4. [Graphical User Interface (GUI) Implementation (Phase 3)](#graphical-user-interface-gui-implementation-phase-3)
-5. [Discounts](#discounts)
-6. [File Handling](#file-handling)
-7. [How to Run](#how-to-run)
+5. [File Handling](#file-handling)
+6. [How to Run](#how-to-run)
 
 ## Overview
 
@@ -93,12 +92,6 @@ The GUI allows the client to:
   - Product details appear in a panel below the table when selected
 - Add products to a shopping cart
 - View the shopping cart with a list of products and the final price
-
-## Discounts
-
-The system applies the following discounts:
-- 20% discount for buying at least three products of the same category
-- 10% discount for the very first purchase
 
 ## File Handling
 
